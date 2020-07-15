@@ -1,3 +1,4 @@
+library(dplyr)
 ## In case your system is not in English language
 Sys.setlocale("LC_TIME",'en_GB.UTF-8')
 ## Downloading the zip file
@@ -30,17 +31,17 @@ par(mfrow=c(2,2), mar=c(4,4,2,1), oma=c(0,0,2,0))
 ## Generating the graphics
 with(data_hcp, {
   plot(Global_active_power~DateTime, type="l", 
-       ylab="Global Active Power (kilowatts)", xlab="")
+       ylab="Global Active Power", xlab="")
   plot(Voltage~DateTime, type="l", 
-       ylab="Voltage (volt)", xlab="")
+       ylab="Voltage", xlab="datetime")
   plot(Sub_metering_1~DateTime, type="l", 
-       ylab="Global Active Power (kilowatts)", xlab="")
+       ylab="Energy Sub metering", xlab="")
   lines(Sub_metering_2~DateTime,col='Red')
   lines(Sub_metering_3~DateTime,col='Blue')
   legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
          legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
   plot(Global_reactive_power~DateTime, type="l", 
-       ylab="Global Rective Power (kilowatts)",xlab="")
+       ylab="Global_Rective_Power",xlab="datetime")
 })
 ## Closing the channel to save the file
 dev.off()
