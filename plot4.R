@@ -41,7 +41,7 @@ with(data_hcp, {
   legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
          legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
   plot(Global_reactive_power~DateTime, type="l", 
-       ylab="Global_Rective_Power",xlab="datetime")
+       ylab="Global_Reactive_Power",xlab="datetime")
 })
 ## Closing the channel to save the file
 dev.off()
